@@ -28,14 +28,6 @@
 					"strict" : false
 				},
 				{
-					"name" : "seleccion[2]",
-					"strict" : false
-				},
-				{
-					"name" : "seleccion[3]",
-					"strict" : false
-				},
-				{
 					"name" : "operandoA[0]",
 					"strict" : false
 				},
@@ -44,15 +36,7 @@
 					"strict" : false
 				},
 				{
-					"name" : "operandoA[1]",
-					"strict" : false
-				},
-				{
 					"name" : "operandoB[1]",
-					"strict" : false
-				},
-				{
-					"name" : "operandoA[2]",
 					"strict" : false
 				},
 				{
@@ -60,11 +44,27 @@
 					"strict" : false
 				},
 				{
+					"name" : "operandoB[3]",
+					"strict" : false
+				},
+				{
+					"name" : "operandoA[1]",
+					"strict" : false
+				},
+				{
+					"name" : "operandoA[2]",
+					"strict" : false
+				},
+				{
 					"name" : "operandoA[3]",
 					"strict" : false
 				},
 				{
-					"name" : "operandoB[3]",
+					"name" : "seleccion[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seleccion[3]",
 					"strict" : false
 				}
 			]

@@ -1,4 +1,4 @@
-module AND(operandoA, operandoB, resultado);
+module CompuertaOR(operandoA, operandoB, resultado);
 	parameter ancho = 'd3;
 	
 	input [ancho:0] operandoA;
@@ -6,5 +6,5 @@ module AND(operandoA, operandoB, resultado);
 	
 	output [ancho:0] resultado;
 
-	assign resultado = operandoA && operandoB;
+	assign resultado = operandoA || operandoB;
 endmodule 

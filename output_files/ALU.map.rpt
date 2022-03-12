@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ALU
-Sat Mar 12 14:50:37 2022
+Sat Mar 12 15:43:30 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -10,7 +10,22 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
   2. Analysis & Synthesis Summary
   3. Analysis & Synthesis Settings
   4. Parallel Compilation
-  5. Analysis & Synthesis Messages
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. General Register Statistics
+  9. Parameter Settings for User Entity Instance: Top-level Entity: |ALU
+ 10. Parameter Settings for User Entity Instance: Sumador:sumadorALU
+ 11. Parameter Settings for User Entity Instance: Restador:restadorALU
+ 12. Parameter Settings for User Entity Instance: CompuertaAND:andALU
+ 13. Parameter Settings for User Entity Instance: CompuertaOR:orALU
+ 14. Parameter Settings for User Entity Instance: ShiftLeft:shiftLeftALU
+ 15. Parameter Settings for User Entity Instance: ShiftRight:shiftRightALU
+ 16. Port Connectivity Checks: "Restador:restadorALU"
+ 17. Port Connectivity Checks: "Sumador:sumadorALU"
+ 18. Post-Synthesis Netlist Statistics for Top Partition
+ 19. Elapsed Time Per Partition
+ 20. Analysis & Synthesis Messages
 
 
 
@@ -34,22 +49,27 @@ https://fpgasoftware.intel.com/eula.
 
 
 
-+---------------------------------------------------------------------------+
-; Analysis & Synthesis Summary                                              ;
-+-----------------------------+---------------------------------------------+
-; Analysis & Synthesis Status ; Failed - Sat Mar 12 14:50:37 2022           ;
-; Quartus Prime Version       ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
-; Revision Name               ; ALU                                         ;
-; Top-level Entity Name       ; ALU                                         ;
-; Family                      ; Cyclone V                                   ;
-; Logic utilization (in ALMs) ; N/A until Partition Merge                   ;
-; Total registers             ; N/A until Partition Merge                   ;
-; Total pins                  ; N/A until Partition Merge                   ;
-; Total virtual pins          ; N/A until Partition Merge                   ;
-; Total block memory bits     ; N/A until Partition Merge                   ;
-; Total PLLs                  ; N/A until Partition Merge                   ;
-; Total DLLs                  ; N/A until Partition Merge                   ;
-+-----------------------------+---------------------------------------------+
++-------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                  ;
++---------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status     ; Successful - Sat Mar 12 15:43:30 2022       ;
+; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
+; Revision Name                   ; ALU                                         ;
+; Top-level Entity Name           ; ALU                                         ;
+; Family                          ; Cyclone V                                   ;
+; Logic utilization (in ALMs)     ; N/A                                         ;
+; Total registers                 ; 0                                           ;
+; Total pins                      ; 20                                          ;
+; Total virtual pins              ; 0                                           ;
+; Total block memory bits         ; 0                                           ;
+; Total DSP Blocks                ; 0                                           ;
+; Total HSSI RX PCSs              ; 0                                           ;
+; Total HSSI PMA RX Deserializers ; 0                                           ;
+; Total HSSI TX PCSs              ; 0                                           ;
+; Total HSSI PMA TX Serializers   ; 0                                           ;
+; Total PLLs                      ; 0                                           ;
+; Total DLLs                      ; 0                                           ;
++---------------------------------+---------------------------------------------+
 
 
 +---------------------------------------------------------------------------------------------------------------------------+
@@ -155,38 +175,253 @@ https://fpgasoftware.intel.com/eula.
 +----------------------------+-------------+
 
 
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                                                                               ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                    ; File Name with Absolute Path                                                                                                           ; Library ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+---------+
+; CompuertaAND.sv                  ; yes             ; User SystemVerilog HDL File  ; C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/CompuertaAND.sv ;         ;
+; Sumador.sv                       ; yes             ; User SystemVerilog HDL File  ; C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/Sumador.sv      ;         ;
+; ALU.sv                           ; yes             ; User SystemVerilog HDL File  ; C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv          ;         ;
+; Restador.sv                      ; yes             ; User SystemVerilog HDL File  ; C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/Restador.sv     ;         ;
+; CompuertaOR.sv                   ; yes             ; User SystemVerilog HDL File  ; C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/CompuertaOR.sv  ;         ;
+; ShiftLeft.sv                     ; yes             ; User SystemVerilog HDL File  ; C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ShiftLeft.sv    ;         ;
+; ShiftRight.sv                    ; yes             ; User SystemVerilog HDL File  ; C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ShiftRight.sv   ;         ;
++----------------------------------+-----------------+------------------------------+----------------------------------------------------------------------------------------------------------------------------------------+---------+
+
+
++------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                      ;
++---------------------------------------------+--------------------+
+; Resource                                    ; Usage              ;
++---------------------------------------------+--------------------+
+; Estimate of Logic utilization (ALMs needed) ; 21                 ;
+;                                             ;                    ;
+; Combinational ALUT usage for logic          ; 34                 ;
+;     -- 7 input functions                    ; 0                  ;
+;     -- 6 input functions                    ; 8                  ;
+;     -- 5 input functions                    ; 5                  ;
+;     -- 4 input functions                    ; 11                 ;
+;     -- <=3 input functions                  ; 10                 ;
+;                                             ;                    ;
+; Dedicated logic registers                   ; 0                  ;
+;                                             ;                    ;
+; I/O pins                                    ; 20                 ;
+;                                             ;                    ;
+; Total DSP Blocks                            ; 0                  ;
+;                                             ;                    ;
+; Maximum fan-out node                        ; operandoB[0]~input ;
+; Maximum fan-out                             ; 10                 ;
+; Total fan-out                               ; 167                ;
+; Average fan-out                             ; 2.26               ;
++---------------------------------------------+--------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                  ;
++-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------+--------------+--------------+
+; Compilation Hierarchy Node    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name           ; Entity Name  ; Library Name ;
++-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------+--------------+--------------+
+; |ALU                          ; 34 (21)             ; 0 (0)                     ; 0                 ; 0          ; 20   ; 0            ; |ALU                          ; ALU          ; work         ;
+;    |CompuertaAND:andALU|      ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|CompuertaAND:andALU      ; CompuertaAND ; work         ;
+;    |CompuertaOR:orALU|        ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|CompuertaOR:orALU        ; CompuertaOR  ; work         ;
+;    |Restador:restadorALU|     ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Restador:restadorALU     ; Restador     ; work         ;
+;    |ShiftLeft:shiftLeftALU|   ; 2 (2)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|ShiftLeft:shiftLeftALU   ; ShiftLeft    ; work         ;
+;    |ShiftRight:shiftRightALU| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|ShiftRight:shiftRightALU ; ShiftRight   ; work         ;
+;    |Sumador:sumadorALU|       ; 4 (4)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Sumador:sumadorALU       ; Sumador      ; work         ;
++-------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-------------------------------+--------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 0     ;
+; Number of registers using Synchronous Clear  ; 0     ;
+; Number of registers using Synchronous Load   ; 0     ;
+; Number of registers using Asynchronous Clear ; 0     ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 0     ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Top-level Entity: |ALU ;
++----------------+----------------------------------+-----------------+
+; Parameter Name ; Value                            ; Type            ;
++----------------+----------------------------------+-----------------+
+; ancho          ; 00000000000000000000000000000011 ; Unsigned Binary ;
++----------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Sumador:sumadorALU     ;
++----------------+----------------------------------+-----------------+
+; Parameter Name ; Value                            ; Type            ;
++----------------+----------------------------------+-----------------+
+; ancho          ; 00000000000000000000000000000011 ; Unsigned Binary ;
++----------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Restador:restadorALU   ;
++----------------+----------------------------------+-----------------+
+; Parameter Name ; Value                            ; Type            ;
++----------------+----------------------------------+-----------------+
+; ancho          ; 00000000000000000000000000000011 ; Unsigned Binary ;
++----------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CompuertaAND:andALU    ;
++----------------+----------------------------------+-----------------+
+; Parameter Name ; Value                            ; Type            ;
++----------------+----------------------------------+-----------------+
+; ancho          ; 00000000000000000000000000000011 ; Unsigned Binary ;
++----------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: CompuertaOR:orALU      ;
++----------------+----------------------------------+-----------------+
+; Parameter Name ; Value                            ; Type            ;
++----------------+----------------------------------+-----------------+
+; ancho          ; 00000000000000000000000000000011 ; Unsigned Binary ;
++----------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ShiftLeft:shiftLeftALU ;
++----------------+----------------------------------+-----------------+
+; Parameter Name ; Value                            ; Type            ;
++----------------+----------------------------------+-----------------+
+; ancho          ; 00000000000000000000000000000011 ; Unsigned Binary ;
++----------------+----------------------------------+-----------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: ShiftRight:shiftRightALU ;
++----------------+----------------------------------+-------------------+
+; Parameter Name ; Value                            ; Type              ;
++----------------+----------------------------------+-------------------+
+; ancho          ; 00000000000000000000000000000011 ; Unsigned Binary   ;
++----------------+----------------------------------+-------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------+
+; Port Connectivity Checks: "Restador:restadorALU" ;
++----------+-------+----------+--------------------+
+; Port     ; Type  ; Severity ; Details            ;
++----------+-------+----------+--------------------+
+; borrowIn ; Input ; Info     ; Stuck at GND       ;
++----------+-------+----------+--------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Sumador:sumadorALU"                                                                     ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port     ; Type   ; Severity ; Details                                                                             ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+; carryIn  ; Input  ; Info     ; Stuck at GND                                                                        ;
+; carryOut ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; arriav_lcell_comb     ; 35                          ;
+;     normal            ; 27                          ;
+;         0 data inputs ; 1                           ;
+;         2 data inputs ; 2                           ;
+;         4 data inputs ; 11                          ;
+;         5 data inputs ; 5                           ;
+;         6 data inputs ; 8                           ;
+;     shared            ; 8                           ;
+;         2 data inputs ; 8                           ;
+; boundary_port         ; 20                          ;
+;                       ;                             ;
+; Max LUT depth         ; 3.30                        ;
+; Average LUT depth     ; 3.01                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:01     ;
++----------------+--------------+
+
+
 +-------------------------------+
 ; Analysis & Synthesis Messages ;
 +-------------------------------+
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Sat Mar 12 14:50:23 2022
+    Info: Processing started: Sat Mar 12 15:43:12 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU -c ALU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file compuertaand.sv
+    Info (12023): Found entity 1: CompuertaAND File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/CompuertaAND.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file sumador.sv
     Info (12023): Found entity 1: Sumador File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/Sumador.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
     Info (12023): Found entity 1: ALU File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file restador.sv
     Info (12023): Found entity 1: Restador File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/Restador.sv Line: 1
-Warning (12018): Entity "AND" will be ignored because it conflicts with Quartus Prime primitive name File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/AND.sv Line: 1
-Info (12021): Found 1 design units, including 1 entities, in source file and.sv
+Info (12021): Found 1 design units, including 1 entities, in source file compuertaor.sv
+    Info (12023): Found entity 1: CompuertaOR File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/CompuertaOR.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file shiftleft.sv
+    Info (12023): Found entity 1: ShiftLeft File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ShiftLeft.sv Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file shiftright.sv
+    Info (12023): Found entity 1: ShiftRight File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ShiftRight.sv Line: 1
 Info (12127): Elaborating entity "ALU" for the top level hierarchy
-Warning (10235): Verilog HDL Always Construct warning at ALU.sv(45): variable "resultadoSuma" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 45
-Warning (10235): Verilog HDL Always Construct warning at ALU.sv(46): variable "resultadoResta" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 46
-Warning (10235): Verilog HDL Always Construct warning at ALU.sv(48): variable "resultadoAND" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 48
-Warning (10235): Verilog HDL Always Construct warning at ALU.sv(50): variable "resultadoSuma" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 50
+Warning (10235): Verilog HDL Always Construct warning at ALU.sv(63): variable "resultadoSuma" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 63
+Warning (10235): Verilog HDL Always Construct warning at ALU.sv(64): variable "resultadoResta" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 64
+Warning (10235): Verilog HDL Always Construct warning at ALU.sv(65): variable "resultadoAND" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 65
+Warning (10235): Verilog HDL Always Construct warning at ALU.sv(66): variable "resultadoOR" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 66
+Warning (10235): Verilog HDL Always Construct warning at ALU.sv(67): variable "resultadoShiftLeft" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 67
+Warning (10235): Verilog HDL Always Construct warning at ALU.sv(68): variable "resultadoShiftRight" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 68
+Warning (10235): Verilog HDL Always Construct warning at ALU.sv(69): variable "resultadoSuma" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 69
 Warning (10034): Output port "banderas" at ALU.sv(10) has no driver File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 10
-Error (12004): Port "operandoA" does not exist in primitive "AND" of instance "andALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 38
-Error (12004): Port "operandoB" does not exist in primitive "AND" of instance "andALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 38
-Error (12004): Port "resultado" does not exist in primitive "AND" of instance "andALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 38
-Error (12153): Can't elaborate top-level user hierarchy
-Error: Quartus Prime Analysis & Synthesis was unsuccessful. 4 errors, 7 warnings
-    Error: Peak virtual memory: 4762 megabytes
-    Error: Processing ended: Sat Mar 12 14:50:37 2022
-    Error: Elapsed time: 00:00:14
-    Error: Total CPU time (on all processors): 00:00:33
+Info (12128): Elaborating entity "Sumador" for hierarchy "Sumador:sumadorALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 27
+Info (12128): Elaborating entity "Restador" for hierarchy "Restador:restadorALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 35
+Info (12128): Elaborating entity "CompuertaAND" for hierarchy "CompuertaAND:andALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 41
+Info (12128): Elaborating entity "CompuertaOR" for hierarchy "CompuertaOR:orALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 47
+Info (12128): Elaborating entity "ShiftLeft" for hierarchy "ShiftLeft:shiftLeftALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 53
+Info (12128): Elaborating entity "ShiftRight" for hierarchy "ShiftRight:shiftRightALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 59
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "banderas[0]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 10
+    Warning (13410): Pin "banderas[1]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 10
+    Warning (13410): Pin "banderas[2]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 10
+    Warning (13410): Pin "banderas[3]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 10
+Info (286030): Timing-Driven Synthesis is running
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 54 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 12 input pins
+    Info (21059): Implemented 8 output pins
+    Info (21061): Implemented 34 logic cells
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 14 warnings
+    Info: Peak virtual memory: 4825 megabytes
+    Info: Processing ended: Sat Mar 12 15:43:30 2022
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:39
 
 
