@@ -1,0 +1,4 @@
+module ALU(input A, input B, output S);
+	integer ancho = 4;
+
+endmodule 

@@ -1,0 +1,9 @@
+vendor_name = ModelSim
+source_file = 1, C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/Sumador.sv
+source_file = 1, C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv
+source_file = 1, C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/db/ALU.cbx.xml
+design_name = ALU
+instance = comp, \S~output , S~output, ALU, 1
+instance = comp, \A~input , A~input, ALU, 1
+instance = comp, \B~input , B~input, ALU, 1
+instance = comp, \~QUARTUS_CREATED_GND~I , ~QUARTUS_CREATED_GND~I, ALU, 1

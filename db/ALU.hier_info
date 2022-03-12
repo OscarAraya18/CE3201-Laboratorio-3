@@ -1,0 +1,57 @@
+|ALU
+operandoA[0] => operandoA[0].IN2
+operandoA[1] => operandoA[1].IN2
+operandoA[2] => operandoA[2].IN2
+operandoA[3] => operandoA[3].IN2
+operandoB[0] => operandoB[0].IN2
+operandoB[1] => operandoB[1].IN2
+operandoB[2] => operandoB[2].IN2
+operandoB[3] => operandoB[3].IN2
+seleccion[0] => Equal0.IN7
+seleccion[1] => Equal0.IN6
+seleccion[2] => Equal0.IN5
+seleccion[3] => Equal0.IN4
+resultado[0] << resultado.DB_MAX_OUTPUT_PORT_TYPE
+resultado[1] << resultado.DB_MAX_OUTPUT_PORT_TYPE
+resultado[2] << resultado.DB_MAX_OUTPUT_PORT_TYPE
+resultado[3] << resultado.DB_MAX_OUTPUT_PORT_TYPE
+banderas[0] << <GND>
+banderas[1] << <GND>
+banderas[2] << <GND>
+banderas[3] << <GND>
+
+
+|ALU|Sumador:sumador
+operandoA[0] => _.DATAD
+operandoA[1] => _.DATAD
+operandoA[2] => _.DATAD
+operandoA[3] => _.DATAD
+operandoB[0] => _.DATAC
+operandoB[1] => _.DATAC
+operandoB[2] => _.DATAC
+operandoB[3] => _.DATAC
+resultado[0] <= _.SUM_OUT
+resultado[1] <= _.SUM_OUT
+resultado[2] <= _.SUM_OUT
+resultado[3] <= _.SUM_OUT
+carryIn => _.DATAB
+carryOut <= _.SUM_OUT
+
+
+|ALU|Restador:restador
+operandoA[0] => Add0.IN8
+operandoA[1] => Add0.IN7
+operandoA[2] => Add0.IN6
+operandoA[3] => Add0.IN5
+operandoB[0] => Add0.IN4
+operandoB[1] => Add0.IN3
+operandoB[2] => Add0.IN2
+operandoB[3] => Add0.IN1
+resultado[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+resultado[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+resultado[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+resultado[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+borrowIn => Add1.IN10
+borrowOut <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+
+

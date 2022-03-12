@@ -1,0 +1,3 @@
+module Multiplicador(operandoA, operandoB, resultado, borrowIn, borrowOut);
+
+endmodule
