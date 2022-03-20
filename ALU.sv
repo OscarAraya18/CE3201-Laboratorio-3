@@ -13,8 +13,12 @@ module ALU(operandoA, operandoB, seleccion, resultado, banderas);
 	
 	wire [ancho:0] resultadoSuma;
 	wire [ancho:0] resultadoResta;
+	wire [ancho:0] resultadoMultiplicacion;
+	wire [ancho:0] resultadoDivision;
+	wire [ancho:0] resultadoModulo;
 	wire [ancho:0] resultadoAND;
 	wire [ancho:0] resultadoOR;
+	wire [ancho:0] resultadoXOR;
 	wire [ancho:0] resultadoShiftLeft;
 	wire [ancho:0] resultadoShiftRight;
 	
@@ -22,7 +26,6 @@ module ALU(operandoA, operandoB, seleccion, resultado, banderas);
 		.operandoA(operandoA),
 		.operandoB(operandoB),
 		.resultado(resultadoSuma),
-		.carryIn(1'b0),
 		.carryOut(outAux)
 	);
 	
@@ -30,8 +33,27 @@ module ALU(operandoA, operandoB, seleccion, resultado, banderas);
 		.operandoA(operandoA),
 		.operandoB(operandoB),
 		.resultado(resultadoResta),
-		.borrowIn(1'b0),
 		.borrowOut(outAux)
+	);
+	
+	Multiplicador multiplicadorALU(
+		.operandoA(operandoA),
+		.operandoB(operandoB),
+		.resultado(resultadoMultiplicacion),
+		.carryOut(outAux)
+	);
+	
+	Divisor divisorALU(
+		.operandoA(operandoA),
+		.operandoB(operandoB),
+		.resultado(resultadoDivision),
+		.carryOut(outAux)
+	);
+	
+	Modulador moduladorALU(
+		.operandoA(operandoA),
+		.operandoB(operandoB),
+		.resultado(resultadoModulo)
 	);
 	
 	CompuertaAND andALU(
@@ -46,6 +68,12 @@ module ALU(operandoA, operandoB, seleccion, resultado, banderas);
 		.resultado(resultadoOR)
 	);
 	
+	CompuertaXOR xorALU(
+		.operandoA(operandoA),
+		.operandoB(operandoB),
+		.resultado(resultadoXOR)
+	);
+	
 	ShiftLeft shiftLeftALU(
 		.operandoA(operandoA),
 		.operandoB(operandoB),
@@ -58,18 +86,20 @@ module ALU(operandoA, operandoB, seleccion, resultado, banderas);
 		.resultado(resultadoShiftRight)
 	);
 	
-	always @(operandoA, operandoB, seleccion) begin
-		case (seleccion)
-			4'b0000: resultado = resultadoSuma;
-			4'b0001: resultado = resultadoResta;
-			4'b0101: resultado = resultadoAND;
-			4'b0110: resultado = resultadoOR;
-			4'b0111: resultado = resultadoShiftLeft;
-			4'b1000: resultado = resultadoShiftRight;
-			default: resultado = resultadoSuma;
-		endcase
-		
-	end
+	Multiplexor multiplexorALU(
+		.entradaSuma(resultadoSuma),
+		.entradaResta(resultadoResta),
+		.entradaMultiplicacion(resultadoMultiplicacion),
+		.entradaDivision(resultadoDivision),
+		.entradaModulo(resultadoModulo),
+		.entradaAND(resultadoAND),
+		.entradaOR(resultadoOR),
+		.entradaXOR(resultadoXOR),
+		.entradaShiftLeft(resultadoShiftLeft),
+		.entradaShiftRight(resultadoShiftRight),
+		.seleccion(seleccion),
+		.salida(resultado)
+	);
 
-
+	
 endmodule 

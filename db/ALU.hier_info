@@ -1,53 +1,40 @@
 |ALU
-operandoA[0] => operandoA[0].IN6
-operandoA[1] => operandoA[1].IN6
-operandoA[2] => operandoA[2].IN6
-operandoA[3] => operandoA[3].IN6
-operandoB[0] => operandoB[0].IN6
-operandoB[1] => operandoB[1].IN6
-operandoB[2] => operandoB[2].IN6
-operandoB[3] => operandoB[3].IN6
-seleccion[0] => Mux0.IN3
-seleccion[0] => Mux1.IN3
-seleccion[0] => Mux2.IN3
-seleccion[0] => Mux3.IN3
-seleccion[1] => Mux0.IN2
-seleccion[1] => Mux1.IN2
-seleccion[1] => Mux2.IN2
-seleccion[1] => Mux3.IN2
-seleccion[2] => Mux0.IN1
-seleccion[2] => Mux1.IN1
-seleccion[2] => Mux2.IN1
-seleccion[2] => Mux3.IN1
-seleccion[3] => Mux0.IN0
-seleccion[3] => Mux1.IN0
-seleccion[3] => Mux2.IN0
-seleccion[3] => Mux3.IN0
-resultado[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
-resultado[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
-resultado[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
-resultado[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
-banderas[0] <= <GND>
-banderas[1] <= <GND>
-banderas[2] <= <GND>
-banderas[3] <= <GND>
+operandoA[0] => operandoA[0].IN10
+operandoA[1] => operandoA[1].IN10
+operandoA[2] => operandoA[2].IN10
+operandoA[3] => operandoA[3].IN10
+operandoB[0] => operandoB[0].IN10
+operandoB[1] => operandoB[1].IN10
+operandoB[2] => operandoB[2].IN10
+operandoB[3] => operandoB[3].IN10
+seleccion[0] => seleccion[0].IN1
+seleccion[1] => seleccion[1].IN1
+seleccion[2] => seleccion[2].IN1
+seleccion[3] => seleccion[3].IN1
+resultado[0] << Multiplexor:multiplexorALU.salida
+resultado[1] << Multiplexor:multiplexorALU.salida
+resultado[2] << Multiplexor:multiplexorALU.salida
+resultado[3] << Multiplexor:multiplexorALU.salida
+banderas[0] << <GND>
+banderas[1] << <GND>
+banderas[2] << <GND>
+banderas[3] << <GND>
 
 
 |ALU|Sumador:sumadorALU
-operandoA[0] => _.DATAD
-operandoA[1] => _.DATAD
-operandoA[2] => _.DATAD
-operandoA[3] => _.DATAD
-operandoB[0] => _.DATAC
-operandoB[1] => _.DATAC
-operandoB[2] => _.DATAC
-operandoB[3] => _.DATAC
-resultado[0] <= _.SUM_OUT
-resultado[1] <= _.SUM_OUT
-resultado[2] <= _.SUM_OUT
-resultado[3] <= _.SUM_OUT
-carryIn => _.DATAB
-carryOut <= _.SUM_OUT
+operandoA[0] => Add0.IN4
+operandoA[1] => Add0.IN3
+operandoA[2] => Add0.IN2
+operandoA[3] => Add0.IN1
+operandoB[0] => Add0.IN8
+operandoB[1] => Add0.IN7
+operandoB[2] => Add0.IN6
+operandoB[3] => Add0.IN5
+resultado[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+carryOut <= Add0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |ALU|Restador:restadorALU
@@ -59,42 +46,103 @@ operandoB[0] => Add0.IN4
 operandoB[1] => Add0.IN3
 operandoB[2] => Add0.IN2
 operandoB[3] => Add0.IN1
-resultado[0] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
-resultado[1] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
-resultado[2] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
-resultado[3] <= Add1.DB_MAX_OUTPUT_PORT_TYPE
-borrowIn => Add1.IN10
-borrowOut <= Add1.DB_MAX_OUTPUT_PORT_TYPE
+resultado[0] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[1] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[2] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+borrowOut <= Add0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|Multiplicador:multiplicadorALU
+operandoA[0] => Mult0.IN3
+operandoA[1] => Mult0.IN2
+operandoA[2] => Mult0.IN1
+operandoA[3] => Mult0.IN0
+operandoB[0] => Mult0.IN7
+operandoB[1] => Mult0.IN6
+operandoB[2] => Mult0.IN5
+operandoB[3] => Mult0.IN4
+resultado[0] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[1] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[2] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[3] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+carryOut <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|Divisor:divisorALU
+operandoA[0] => Div0.IN3
+operandoA[1] => Div0.IN2
+operandoA[2] => Div0.IN1
+operandoA[3] => Div0.IN0
+operandoB[0] => Div0.IN7
+operandoB[1] => Div0.IN6
+operandoB[2] => Div0.IN5
+operandoB[3] => Div0.IN4
+resultado[0] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[1] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[2] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[3] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
+carryOut <= <GND>
+
+
+|ALU|Modulador:moduladorALU
+operandoA[0] => Mod0.IN3
+operandoA[1] => Mod0.IN2
+operandoA[2] => Mod0.IN1
+operandoA[3] => Mod0.IN0
+operandoB[0] => Mod0.IN7
+operandoB[1] => Mod0.IN6
+operandoB[2] => Mod0.IN5
+operandoB[3] => Mod0.IN4
+resultado[0] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[1] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
+resultado[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |ALU|CompuertaAND:andALU
-operandoA[0] => WideOr0.IN0
-operandoA[1] => WideOr0.IN1
-operandoA[2] => WideOr0.IN2
-operandoA[3] => WideOr0.IN3
-operandoB[0] => WideOr1.IN0
-operandoB[1] => WideOr1.IN1
-operandoB[2] => WideOr1.IN2
-operandoB[3] => WideOr1.IN3
+operandoA[0] => resultado.IN0
+operandoA[1] => resultado.IN0
+operandoA[2] => resultado.IN0
+operandoA[3] => resultado.IN0
+operandoB[0] => resultado.IN1
+operandoB[1] => resultado.IN1
+operandoB[2] => resultado.IN1
+operandoB[3] => resultado.IN1
 resultado[0] <= resultado.DB_MAX_OUTPUT_PORT_TYPE
-resultado[1] <= <GND>
-resultado[2] <= <GND>
-resultado[3] <= <GND>
+resultado[1] <= resultado.DB_MAX_OUTPUT_PORT_TYPE
+resultado[2] <= resultado.DB_MAX_OUTPUT_PORT_TYPE
+resultado[3] <= resultado.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |ALU|CompuertaOR:orALU
-operandoA[0] => WideOr0.IN0
-operandoA[1] => WideOr0.IN1
-operandoA[2] => WideOr0.IN2
-operandoA[3] => WideOr0.IN3
-operandoB[0] => WideOr1.IN0
-operandoB[1] => WideOr1.IN1
-operandoB[2] => WideOr1.IN2
-operandoB[3] => WideOr1.IN3
+operandoA[0] => resultado.IN0
+operandoA[1] => resultado.IN0
+operandoA[2] => resultado.IN0
+operandoA[3] => resultado.IN0
+operandoB[0] => resultado.IN1
+operandoB[1] => resultado.IN1
+operandoB[2] => resultado.IN1
+operandoB[3] => resultado.IN1
 resultado[0] <= resultado.DB_MAX_OUTPUT_PORT_TYPE
-resultado[1] <= <GND>
-resultado[2] <= <GND>
-resultado[3] <= <GND>
+resultado[1] <= resultado.DB_MAX_OUTPUT_PORT_TYPE
+resultado[2] <= resultado.DB_MAX_OUTPUT_PORT_TYPE
+resultado[3] <= resultado.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|CompuertaXOR:xorALU
+operandoA[0] => resultado.IN0
+operandoA[1] => resultado.IN0
+operandoA[2] => resultado.IN0
+operandoA[3] => resultado.IN0
+operandoB[0] => resultado.IN1
+operandoB[1] => resultado.IN1
+operandoB[2] => resultado.IN1
+operandoB[3] => resultado.IN1
+resultado[0] <= resultado.DB_MAX_OUTPUT_PORT_TYPE
+resultado[1] <= resultado.DB_MAX_OUTPUT_PORT_TYPE
+resultado[2] <= resultado.DB_MAX_OUTPUT_PORT_TYPE
+resultado[3] <= resultado.DB_MAX_OUTPUT_PORT_TYPE
 
 
 |ALU|ShiftLeft:shiftLeftALU
@@ -125,5 +173,68 @@ resultado[0] <= ShiftRight0.DB_MAX_OUTPUT_PORT_TYPE
 resultado[1] <= ShiftRight0.DB_MAX_OUTPUT_PORT_TYPE
 resultado[2] <= ShiftRight0.DB_MAX_OUTPUT_PORT_TYPE
 resultado[3] <= ShiftRight0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|Multiplexor:multiplexorALU
+entradaSuma[0] => Mux3.IN6
+entradaSuma[1] => Mux2.IN6
+entradaSuma[2] => Mux1.IN6
+entradaSuma[3] => Mux0.IN6
+entradaResta[0] => Mux3.IN7
+entradaResta[1] => Mux2.IN7
+entradaResta[2] => Mux1.IN7
+entradaResta[3] => Mux0.IN7
+entradaMultiplicacion[0] => Mux3.IN8
+entradaMultiplicacion[1] => Mux2.IN8
+entradaMultiplicacion[2] => Mux1.IN8
+entradaMultiplicacion[3] => Mux0.IN8
+entradaDivision[0] => Mux3.IN9
+entradaDivision[1] => Mux2.IN9
+entradaDivision[2] => Mux1.IN9
+entradaDivision[3] => Mux0.IN9
+entradaModulo[0] => Mux3.IN10
+entradaModulo[1] => Mux2.IN10
+entradaModulo[2] => Mux1.IN10
+entradaModulo[3] => Mux0.IN10
+entradaAND[0] => Mux3.IN11
+entradaAND[1] => Mux2.IN11
+entradaAND[2] => Mux1.IN11
+entradaAND[3] => Mux0.IN11
+entradaOR[0] => Mux3.IN12
+entradaOR[1] => Mux2.IN12
+entradaOR[2] => Mux1.IN12
+entradaOR[3] => Mux0.IN12
+entradaXOR[0] => Mux3.IN13
+entradaXOR[1] => Mux2.IN13
+entradaXOR[2] => Mux1.IN13
+entradaXOR[3] => Mux0.IN13
+entradaShiftLeft[0] => Mux3.IN14
+entradaShiftLeft[1] => Mux2.IN14
+entradaShiftLeft[2] => Mux1.IN14
+entradaShiftLeft[3] => Mux0.IN14
+entradaShiftRight[0] => Mux3.IN15
+entradaShiftRight[1] => Mux2.IN15
+entradaShiftRight[2] => Mux1.IN15
+entradaShiftRight[3] => Mux0.IN15
+seleccion[0] => Mux0.IN19
+seleccion[0] => Mux1.IN19
+seleccion[0] => Mux2.IN19
+seleccion[0] => Mux3.IN19
+seleccion[1] => Mux0.IN18
+seleccion[1] => Mux1.IN18
+seleccion[1] => Mux2.IN18
+seleccion[1] => Mux3.IN18
+seleccion[2] => Mux0.IN17
+seleccion[2] => Mux1.IN17
+seleccion[2] => Mux2.IN17
+seleccion[2] => Mux3.IN17
+seleccion[3] => Mux0.IN16
+seleccion[3] => Mux1.IN16
+seleccion[3] => Mux2.IN16
+seleccion[3] => Mux3.IN16
+salida[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
+salida[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
+salida[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
+salida[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 

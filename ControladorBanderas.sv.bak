@@ -1,0 +1,5 @@
+module ControladorBanderas(resultado, N, Z, C, V);
+	parameter ancho = 'd3;
+
+
+endmodule 

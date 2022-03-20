@@ -1,0 +1,4 @@
+module multiplexor(resultado, seleccion);
+
+
+endmodule 
