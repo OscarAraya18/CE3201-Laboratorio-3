@@ -11,14 +11,14 @@ seleccion[0] => seleccion[0].IN1
 seleccion[1] => seleccion[1].IN1
 seleccion[2] => seleccion[2].IN1
 seleccion[3] => seleccion[3].IN1
-resultado[0] << Multiplexor:multiplexorALU.salida
-resultado[1] << Multiplexor:multiplexorALU.salida
-resultado[2] << Multiplexor:multiplexorALU.salida
-resultado[3] << Multiplexor:multiplexorALU.salida
-banderas[0] << <GND>
-banderas[1] << <GND>
-banderas[2] << <GND>
-banderas[3] << <GND>
+resultado[0] <= resultado[0].DB_MAX_OUTPUT_PORT_TYPE
+resultado[1] <= resultado[1].DB_MAX_OUTPUT_PORT_TYPE
+resultado[2] <= resultado[2].DB_MAX_OUTPUT_PORT_TYPE
+resultado[3] <= resultado[3].DB_MAX_OUTPUT_PORT_TYPE
+banderas[0] <= <GND>
+banderas[1] <= <GND>
+banderas[2] <= <GND>
+banderas[3] <= <GND>
 
 
 |ALU|Sumador:sumadorALU
@@ -236,5 +236,17 @@ salida[0] <= Mux3.DB_MAX_OUTPUT_PORT_TYPE
 salida[1] <= Mux2.DB_MAX_OUTPUT_PORT_TYPE
 salida[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 salida[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|ALU|ControladorBanderas:controladorBanderas
+resultado[0] => Equal0.IN31
+resultado[1] => Equal0.IN30
+resultado[2] => Equal0.IN29
+resultado[3] => Equal0.IN28
+carryOut => C.DATAIN
+N <= <GND>
+Z <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+C <= carryOut.DB_MAX_OUTPUT_PORT_TYPE
+V <= <GND>
 
 

@@ -1,8 +1,6 @@
-module Multiplexor(entradaSuma, entradaResta, entradaMultiplicacion, entradaDivision, entradaModulo, 
+module Multiplexor #(parameter ancho = 'd3) (entradaSuma, entradaResta, entradaMultiplicacion, entradaDivision, entradaModulo, 
 						entradaAND, entradaOR, entradaXOR, entradaShiftLeft, entradaShiftRight, seleccion, salida);
-	
-	parameter ancho = 'd3;
-	
+		
 	input [ancho:0] entradaSuma;
 	input [ancho:0] entradaResta;
 	input [ancho:0] entradaMultiplicacion;

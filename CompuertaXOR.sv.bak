@@ -1,4 +1,5 @@
-module CompuertaXOR #(parameter ancho = 'd3) (operandoA, operandoB, resultado);
+module CompuertaXOR(operandoA, operandoB, resultado);
+	parameter ancho = 'd3;
 	input [ancho:0] operandoA;
 	input [ancho:0] operandoB;
 	output [ancho:0] resultado;

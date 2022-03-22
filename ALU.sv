@@ -1,16 +1,12 @@
-module ALU(operandoA, operandoB, seleccion, resultado, banderas);
-
-	parameter ancho = 'd3;
-	
+module ALU #(parameter ancho = 'd3) (operandoA, operandoB, seleccion, resultado, banderas);
 	input [ancho:0] operandoA;
 	input [ancho:0] operandoB;
 	input [3:0] seleccion;
-	
 	output [ancho:0] resultado;
 	output [3:0] banderas;
 	
-	wire outAux;
-	
+	// N,Z,C,V
+		
 	wire [ancho:0] resultadoSuma;
 	wire [ancho:0] resultadoResta;
 	wire [ancho:0] resultadoMultiplicacion;
@@ -22,71 +18,73 @@ module ALU(operandoA, operandoB, seleccion, resultado, banderas);
 	wire [ancho:0] resultadoShiftLeft;
 	wire [ancho:0] resultadoShiftRight;
 	
-	Sumador sumadorALU(
+	wire carryOut;
+	
+	Sumador #(ancho) sumadorALU(
 		.operandoA(operandoA),
 		.operandoB(operandoB),
 		.resultado(resultadoSuma),
-		.carryOut(outAux)
+		.carryOut(carryOut),
 	);
 	
-	Restador restadorALU(
+	Restador #(ancho) restadorALU(
 		.operandoA(operandoA),
 		.operandoB(operandoB),
 		.resultado(resultadoResta),
-		.borrowOut(outAux)
+		.borrowOut(carryOut)
 	);
 	
-	Multiplicador multiplicadorALU(
+	Multiplicador #(ancho) multiplicadorALU(
 		.operandoA(operandoA),
 		.operandoB(operandoB),
 		.resultado(resultadoMultiplicacion),
-		.carryOut(outAux)
+		.carryOut(carryOut)
 	);
 	
-	Divisor divisorALU(
+	Divisor #(ancho) divisorALU(
 		.operandoA(operandoA),
 		.operandoB(operandoB),
 		.resultado(resultadoDivision),
-		.carryOut(outAux)
+		.carryOut(carryOut)
 	);
 	
-	Modulador moduladorALU(
+	Modulador #(ancho) moduladorALU(
 		.operandoA(operandoA),
 		.operandoB(operandoB),
 		.resultado(resultadoModulo)
 	);
 	
-	CompuertaAND andALU(
+	CompuertaAND #(ancho) andALU(
 		.operandoA(operandoA),
 		.operandoB(operandoB),
 		.resultado(resultadoAND)
 	);
 	
-	CompuertaOR orALU(
+	CompuertaOR #(ancho) orALU(
 		.operandoA(operandoA),
 		.operandoB(operandoB),
 		.resultado(resultadoOR)
 	);
 	
-	CompuertaXOR xorALU(
+	CompuertaXOR #(ancho) xorALU(
 		.operandoA(operandoA),
 		.operandoB(operandoB),
 		.resultado(resultadoXOR)
 	);
 	
-	ShiftLeft shiftLeftALU(
+	ShiftLeft #(ancho) shiftLeftALU(
 		.operandoA(operandoA),
 		.operandoB(operandoB),
 		.resultado(resultadoShiftLeft)
 	);
 	
-	ShiftRight shiftRightALU(
+	ShiftRight #(ancho) shiftRightALU(
 		.operandoA(operandoA),
 		.operandoB(operandoB),
 		.resultado(resultadoShiftRight)
 	);
 	
-	Multiplexor multiplexorALU(
+	Multiplexor #(ancho) multiplexorALU(
 		.entradaSuma(resultadoSuma),
 		.entradaResta(resultadoResta),
 		.entradaMultiplicacion(resultadoMultiplicacion),
@@ -99,6 +97,16 @@ module ALU(operandoA, operandoB, seleccion, resultado, banderas);
 		.entradaShiftRight(resultadoShiftRight),
 		.seleccion(seleccion),
 		.salida(resultado)
+	);
+	
+	ControladorBanderas #(ancho) controladorBanderas(
+		.resultado(resultado),
+		.carryOut(carryOut),
+		.N('d0),
+		.Z('d0),
+		.C('d0),
+		.V('d0)
+		
 	);
 
 	

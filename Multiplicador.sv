@@ -1,5 +1,4 @@
-module Multiplicador(operandoA, operandoB, resultado, carryOut);
-	parameter ancho = 'd3;
+module Multiplicador #(parameter ancho = 'd3) (operandoA, operandoB, resultado, carryOut);
 	input [ancho:0] operandoA;
 	input [ancho:0] operandoB;
 	output [ancho:0] resultado;

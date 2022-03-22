@@ -1,5 +1,4 @@
-module CompuertaAND(operandoA, operandoB, resultado);
-	parameter ancho = 'd3;
+module CompuertaAND #(parameter ancho = 'd3) (operandoA, operandoB, resultado);
 	input [ancho:0] operandoA;
 	input [ancho:0] operandoB;
 	output [ancho:0] resultado;
