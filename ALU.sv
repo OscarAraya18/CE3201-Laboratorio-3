@@ -1,9 +1,13 @@
-module ALU #(parameter ancho = 'd3) (operandoA, operandoB, seleccion, resultado, banderas);
+module ALU #(parameter ancho = 'd3) (operandoA, operandoB, seleccion, resultado, N, Z, C, V);
 	input [ancho:0] operandoA;
 	input [ancho:0] operandoB;
 	input [3:0] seleccion;
+	
 	output [ancho:0] resultado;
-	output [3:0] banderas;
+	output N;
+	output Z;
+	output C;
+	output V;
 			
 	wire [ancho:0] resultadoSuma;
 	wire [ancho:0] resultadoResta;
@@ -24,7 +28,7 @@ module ALU #(parameter ancho = 'd3) (operandoA, operandoB, seleccion, resultado,
 		.operandoA(operandoA),
 		.operandoB(operandoB),
 		.resultado(resultadoSuma),
-		.carryOut(resultadoCarryOut),
+		.carryOut(resultadoCarryOut)
 	);
 	
 	Restador #(ancho) restadorALU(
@@ -44,7 +48,7 @@ module ALU #(parameter ancho = 'd3) (operandoA, operandoB, seleccion, resultado,
 	Divisor #(ancho) divisorALU(
 		.operandoA(operandoA),
 		.operandoB(operandoB),
-		.resultado(resultadoDivision),
+		.resultado(resultadoDivision)
 	);
 	
 	Modulador #(ancho) moduladorALU(
@@ -103,7 +107,10 @@ module ALU #(parameter ancho = 'd3) (operandoA, operandoB, seleccion, resultado,
 		.carryOut(resultadoCarryOut),
 		.borrowOut(resultadoBorrowOut),
 		.overflow(resultadoOverflow),
-		.salida(banderas)
+		.N(N),
+		.Z(Z),
+		.C(C),
+		.V(V)
 	);
 
 	

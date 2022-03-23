@@ -1,0 +1,389 @@
+m255
+K4
+z2
+!s11f vlog 2020.1 2020.02, Feb 28 2020
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dC:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/simulation/modelsim
+vALU
+Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
+Z2 !s110 1648017462
+!i10b 1
+!s100 :dOLalCeaV`ZlBT5dhA]O0
+Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
+I@RA^A<SX=alP1_]^F_cJ30
+Z4 VDg1SIo80bB@j0V0VzS_@n1
+S1
+R0
+w1648015440
+8C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ALU.sv
+FC:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ALU.sv
+!i122 2
+L0 1 117
+Z5 OV;L;2020.1;71
+r1
+!s85 0
+31
+Z6 !s108 1648017462.000000
+!s107 C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ALU.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3|C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ALU.sv|
+!i113 1
+Z7 o-sv -work work
+Z8 !s92 -sv -work work +incdir+C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3
+Z9 tCvgOpt 0
+n@a@l@u
+vALU_tb
+R1
+Z10 !s110 1648017463
+!i10b 1
+!s100 RFDfG:6U]cMV[3HFT`fl82
+R3
+I1Q7>Pf262_CORYDlQL0MB2
+R4
+S1
+R0
+w1648017427
+8C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ALU_tb.sv
+FC:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ALU_tb.sv
+!i122 13
+L0 1 567
+R5
+r1
+!s85 0
+31
+Z11 !s108 1648017463.000000
+!s107 C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ALU_tb.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3|C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ALU_tb.sv|
+!i113 1
+R7
+R8
+R9
+n@a@l@u_tb
+vCompuertaAND
+R1
+R2
+!i10b 1
+!s100 d_CEjCSoMna?UzhE]U?ka3
+R3
+IZGX0[^bDSR5N;1IA=^`ne1
+R4
+S1
+R0
+Z12 w1647968386
+8C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/CompuertaAND.sv
+FC:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/CompuertaAND.sv
+!i122 0
+Z13 L0 1 6
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/CompuertaAND.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3|C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/CompuertaAND.sv|
+!i113 1
+R7
+R8
+R9
+n@compuerta@a@n@d
+vCompuertaOR
+R1
+R2
+!i10b 1
+!s100 fdgGnSGkA?;lX`=JE:5Xe2
+R3
+I@b:4BG:CKKgjhUWfDEd[`1
+R4
+S1
+R0
+R12
+8C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/CompuertaOR.sv
+FC:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/CompuertaOR.sv
+!i122 4
+R13
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/CompuertaOR.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3|C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/CompuertaOR.sv|
+!i113 1
+R7
+R8
+R9
+n@compuerta@o@r
+vCompuertaXOR
+R1
+R10
+!i10b 1
+!s100 60Z_UCn_S6U6XOQk>O]1`2
+R3
+IJ?D=D=M^^dl>Ad4KXA62:0
+R4
+S1
+R0
+R12
+8C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/CompuertaXOR.sv
+FC:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/CompuertaXOR.sv
+!i122 8
+R13
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/CompuertaXOR.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3|C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/CompuertaXOR.sv|
+!i113 1
+R7
+R8
+R9
+n@compuerta@x@o@r
+vControladorBanderas
+R1
+R10
+!i10b 1
+!s100 _71_<0FhbN2ikGBlajo=92
+R3
+I[0Nn?6BYHh;?zjMI><eTo1
+R4
+S1
+R0
+w1648015550
+8C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ControladorBanderas.sv
+FC:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ControladorBanderas.sv
+!i122 12
+L0 1 36
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ControladorBanderas.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3|C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ControladorBanderas.sv|
+!i113 1
+R7
+R8
+R9
+n@controlador@banderas
+vDivisor
+R1
+R10
+!i10b 1
+!s100 ZH>60Rg;7ezXbJUK3_F[k3
+R3
+IG88Xmg5`C?U0;aSmnRR9T1
+R4
+S1
+R0
+w1648004753
+8C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Divisor.sv
+FC:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Divisor.sv
+!i122 10
+R13
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Divisor.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3|C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Divisor.sv|
+!i113 1
+R7
+R8
+R9
+n@divisor
+vModulador
+R1
+R10
+!i10b 1
+!s100 XJVglE3d[APV@z:Cn>L;T1
+R3
+I`^J[;kIlU[MZ=K5GA`ET>3
+R4
+S1
+R0
+R12
+8C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Modulador.sv
+FC:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Modulador.sv
+!i122 11
+R13
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Modulador.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3|C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Modulador.sv|
+!i113 1
+R7
+R8
+R9
+n@modulador
+vMultiplexor
+R1
+R10
+!i10b 1
+!s100 81zYLVGY;b[adbh1RQgmH3
+R3
+I53VAOY5W>U?_BUo>PSkP51
+R4
+S1
+R0
+w1648011178
+8C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Multiplexor.sv
+FC:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Multiplexor.sv
+!i122 7
+L0 1 34
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Multiplexor.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3|C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Multiplexor.sv|
+!i113 1
+R7
+R8
+R9
+n@multiplexor
+vMultiplicador
+R1
+R10
+!i10b 1
+!s100 =?gajn9P8Bmd;F3h26`?K2
+R3
+IA[@e^KkmNO2lj=UGb3S7H3
+R4
+S1
+R0
+R12
+8C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Multiplicador.sv
+FC:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Multiplicador.sv
+!i122 9
+Z14 L0 1 7
+R5
+r1
+!s85 0
+31
+R11
+!s107 C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Multiplicador.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3|C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Multiplicador.sv|
+!i113 1
+R7
+R8
+R9
+n@multiplicador
+vRestador
+R1
+R2
+!i10b 1
+!s100 Ff331=6gPM2@JX[@CE8HX3
+R3
+ID0X?m66WMIU]gDY:FPf=h2
+R4
+S1
+R0
+R12
+8C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Restador.sv
+FC:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Restador.sv
+!i122 3
+R14
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Restador.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3|C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Restador.sv|
+!i113 1
+R7
+R8
+R9
+n@restador
+vShiftLeft
+R1
+R2
+!i10b 1
+!s100 N]WBX<F@=>K501a6DYVVz3
+R3
+IfSFjFOV4hN;efI^Y]oLhY1
+R4
+S1
+R0
+R12
+8C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ShiftLeft.sv
+FC:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ShiftLeft.sv
+!i122 5
+Z15 L0 1 8
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ShiftLeft.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3|C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ShiftLeft.sv|
+!i113 1
+R7
+R8
+R9
+n@shift@left
+vShiftRight
+R1
+R2
+!i10b 1
+!s100 _L?^_^gIO?=IoYKOZLAXn2
+R3
+Ica5mLAOA7i=>m65VR^XWN2
+R4
+S1
+R0
+R12
+8C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ShiftRight.sv
+FC:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ShiftRight.sv
+!i122 6
+R15
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ShiftRight.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3|C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ShiftRight.sv|
+!i113 1
+R7
+R8
+R9
+n@shift@right
+vSumador
+R1
+R2
+!i10b 1
+!s100 HBU_<k;emik5izgazZ`QU0
+R3
+I:YDigBRZUKz@_ff`RO<]b0
+R4
+S1
+R0
+R12
+8C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Sumador.sv
+FC:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Sumador.sv
+!i122 1
+R14
+R5
+r1
+!s85 0
+31
+R6
+!s107 C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Sumador.sv|
+!s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3|C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Sumador.sv|
+!i113 1
+R7
+R8
+R9
+n@sumador

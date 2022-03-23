@@ -11,14 +11,14 @@ seleccion[0] => seleccion[0].IN1
 seleccion[1] => seleccion[1].IN1
 seleccion[2] => seleccion[2].IN1
 seleccion[3] => seleccion[3].IN1
-resultado[0] <= resultado[0].DB_MAX_OUTPUT_PORT_TYPE
-resultado[1] <= resultado[1].DB_MAX_OUTPUT_PORT_TYPE
-resultado[2] <= resultado[2].DB_MAX_OUTPUT_PORT_TYPE
-resultado[3] <= resultado[3].DB_MAX_OUTPUT_PORT_TYPE
-banderas[0] <= ControladorBanderas:controladorBanderas.salida
-banderas[1] <= ControladorBanderas:controladorBanderas.salida
-banderas[2] <= ControladorBanderas:controladorBanderas.salida
-banderas[3] <= ControladorBanderas:controladorBanderas.salida
+resultado[0] << resultado[0].DB_MAX_OUTPUT_PORT_TYPE
+resultado[1] << resultado[1].DB_MAX_OUTPUT_PORT_TYPE
+resultado[2] << resultado[2].DB_MAX_OUTPUT_PORT_TYPE
+resultado[3] << resultado[3].DB_MAX_OUTPUT_PORT_TYPE
+N << ControladorBanderas:controladorBanderas.N
+Z << ControladorBanderas:controladorBanderas.Z
+C << ControladorBanderas:controladorBanderas.C
+V << ControladorBanderas:controladorBanderas.V
 
 
 |ALU|Sumador:sumadorALU
@@ -242,12 +242,12 @@ resultado[0] => Equal0.IN31
 resultado[1] => Equal0.IN30
 resultado[2] => Equal0.IN29
 resultado[3] => Equal0.IN28
-carryOut => salida[2].DATAIN
-borrowOut => salida[0].DATAIN
-overflow => salida[3].DATAIN
-salida[0] <= borrowOut.DB_MAX_OUTPUT_PORT_TYPE
-salida[1] <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
-salida[2] <= carryOut.DB_MAX_OUTPUT_PORT_TYPE
-salida[3] <= overflow.DB_MAX_OUTPUT_PORT_TYPE
+carryOut => C.DATAIN
+borrowOut => N.DATAIN
+overflow => V.DATAIN
+N <= borrowOut.DB_MAX_OUTPUT_PORT_TYPE
+Z <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
+C <= carryOut.DB_MAX_OUTPUT_PORT_TYPE
+V <= overflow.DB_MAX_OUTPUT_PORT_TYPE
 
 
