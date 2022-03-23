@@ -4,9 +4,7 @@ module ALU #(parameter ancho = 'd3) (operandoA, operandoB, seleccion, resultado,
 	input [3:0] seleccion;
 	output [ancho:0] resultado;
 	output [3:0] banderas;
-	
-	// N,Z,C,V
-		
+			
 	wire [ancho:0] resultadoSuma;
 	wire [ancho:0] resultadoResta;
 	wire [ancho:0] resultadoMultiplicacion;
@@ -18,34 +16,35 @@ module ALU #(parameter ancho = 'd3) (operandoA, operandoB, seleccion, resultado,
 	wire [ancho:0] resultadoShiftLeft;
 	wire [ancho:0] resultadoShiftRight;
 	
-	wire carryOut;
+	wire resultadoCarryOut;
+	wire resultadoBorrowOut;
+	wire resultadoOverflow;
 	
 	Sumador #(ancho) sumadorALU(
 		.operandoA(operandoA),
 		.operandoB(operandoB),
 		.resultado(resultadoSuma),
-		.carryOut(carryOut),
+		.carryOut(resultadoCarryOut),
 	);
 	
 	Restador #(ancho) restadorALU(
 		.operandoA(operandoA),
 		.operandoB(operandoB),
 		.resultado(resultadoResta),
-		.borrowOut(carryOut)
+		.borrowOut(resultadoBorrowOut)
 	);
 	
 	Multiplicador #(ancho) multiplicadorALU(
 		.operandoA(operandoA),
 		.operandoB(operandoB),
 		.resultado(resultadoMultiplicacion),
-		.carryOut(carryOut)
+		.carryOut(resultadoOverflow)
 	);
 	
 	Divisor #(ancho) divisorALU(
 		.operandoA(operandoA),
 		.operandoB(operandoB),
 		.resultado(resultadoDivision),
-		.carryOut(carryOut)
 	);
 	
 	Modulador #(ancho) moduladorALU(
@@ -101,12 +100,10 @@ module ALU #(parameter ancho = 'd3) (operandoA, operandoB, seleccion, resultado,
 	
 	ControladorBanderas #(ancho) controladorBanderas(
 		.resultado(resultado),
-		.carryOut(carryOut),
-		.N('d0),
-		.Z('d0),
-		.C('d0),
-		.V('d0)
-		
+		.carryOut(resultadoCarryOut),
+		.borrowOut(resultadoBorrowOut),
+		.overflow(resultadoOverflow),
+		.salida(banderas)
 	);
 
 	

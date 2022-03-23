@@ -1,22 +1,30 @@
-module ControladorBanderas #(parameter ancho = 'd3) (resultado, carryOut, N, Z, C, V);
+module ControladorBanderas #(parameter ancho = 'd3) (resultado, carryOut, borrowOut, overflow, salida);
 	input [ancho:0] resultado;
 	input carryOut;
-	output N;
-	output Z;
-	output C;
-	output V;
+	input borrowOut;
+	input overflow;
+	
+	output [3:0] salida;
+	
+	// N, Z, C, V
 	
 	always @(resultado) begin
+		if (borrowOut == 1)
+			salida[0] = 1;
+		else
+			salida[0] = 0;
 		if (resultado == 0)
-			Z = 1;
+			salida[1] = 1;
 		else
-			Z = 0;
-		
+			salida[1] = 0;			
 		if (carryOut == 1)
-			C = 1;
+			salida[2] = 1;
 		else
-			C = 0;
-		
+			salida[2] = 0;
+		if (overflow == 1)
+			salida[3] = 1;
+		else
+			salida[3] = 0;
 	end
 
 endmodule 

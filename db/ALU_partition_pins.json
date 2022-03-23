@@ -20,6 +20,22 @@
 					"strict" : false
 				},
 				{
+					"name" : "banderas[0]",
+					"strict" : false
+				},
+				{
+					"name" : "banderas[1]",
+					"strict" : false
+				},
+				{
+					"name" : "banderas[2]",
+					"strict" : false
+				},
+				{
+					"name" : "banderas[3]",
+					"strict" : false
+				},
+				{
 					"name" : "operandoB[0]",
 					"strict" : false
 				},

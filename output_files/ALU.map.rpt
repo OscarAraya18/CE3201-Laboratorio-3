@@ -1,5 +1,5 @@
 Analysis & Synthesis report for ALU
-Mon Mar 21 22:19:33 2022
+Tue Mar 22 19:49:48 2022
 Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
 
 
@@ -30,10 +30,9 @@ Quartus Prime Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
  22. Parameter Settings for User Entity Instance: ControladorBanderas:controladorBanderas
  23. Parameter Settings for Inferred Entity Instance: Divisor:divisorALU|lpm_divide:Div0
  24. Parameter Settings for Inferred Entity Instance: Modulador:moduladorALU|lpm_divide:Mod0
- 25. Port Connectivity Checks: "ControladorBanderas:controladorBanderas"
- 26. Post-Synthesis Netlist Statistics for Top Partition
- 27. Elapsed Time Per Partition
- 28. Analysis & Synthesis Messages
+ 25. Post-Synthesis Netlist Statistics for Top Partition
+ 26. Elapsed Time Per Partition
+ 27. Analysis & Synthesis Messages
 
 
 
@@ -60,7 +59,7 @@ https://fpgasoftware.intel.com/eula.
 +-------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                  ;
 +---------------------------------+---------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Mon Mar 21 22:19:33 2022       ;
+; Analysis & Synthesis Status     ; Successful - Tue Mar 22 19:49:48 2022       ;
 ; Quartus Prime Version           ; 20.1.0 Build 711 06/05/2020 SJ Lite Edition ;
 ; Revision Name                   ; ALU                                         ;
 ; Top-level Entity Name           ; ALU                                         ;
@@ -217,14 +216,14 @@ https://fpgasoftware.intel.com/eula.
 +---------------------------------------------+--------------------+
 ; Resource                                    ; Usage              ;
 +---------------------------------------------+--------------------+
-; Estimate of Logic utilization (ALMs needed) ; 41                 ;
+; Estimate of Logic utilization (ALMs needed) ; 46                 ;
 ;                                             ;                    ;
-; Combinational ALUT usage for logic          ; 74                 ;
-;     -- 7 input functions                    ; 2                  ;
-;     -- 6 input functions                    ; 6                  ;
-;     -- 5 input functions                    ; 21                 ;
-;     -- 4 input functions                    ; 11                 ;
-;     -- <=3 input functions                  ; 34                 ;
+; Combinational ALUT usage for logic          ; 81                 ;
+;     -- 7 input functions                    ; 3                  ;
+;     -- 6 input functions                    ; 7                  ;
+;     -- 5 input functions                    ; 19                 ;
+;     -- 4 input functions                    ; 14                 ;
+;     -- <=3 input functions                  ; 38                 ;
 ;                                             ;                    ;
 ; Dedicated logic registers                   ; 0                  ;
 ;                                             ;                    ;
@@ -233,34 +232,36 @@ https://fpgasoftware.intel.com/eula.
 ; Total DSP Blocks                            ; 1                  ;
 ;                                             ;                    ;
 ; Maximum fan-out node                        ; operandoB[3]~input ;
-; Maximum fan-out                             ; 20                 ;
-; Total fan-out                               ; 314                ;
-; Average fan-out                             ; 2.73               ;
+; Maximum fan-out                             ; 22                 ;
+; Total fan-out                               ; 337                ;
+; Average fan-out                             ; 2.76               ;
 +---------------------------------------------+--------------------+
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                   ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; Compilation Hierarchy Node                ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                         ; Entity Name         ; Library Name ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
-; |ALU                                      ; 74 (0)              ; 0 (0)                     ; 0                 ; 1          ; 20   ; 0            ; |ALU                                                                                                                        ; ALU                 ; work         ;
-;    |Divisor:divisorALU|                   ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Divisor:divisorALU                                                                                                     ; Divisor             ; work         ;
-;       |lpm_divide:Div0|                   ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Divisor:divisorALU|lpm_divide:Div0                                                                                     ; lpm_divide          ; work         ;
-;          |lpm_divide_1am:auto_generated|  ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Divisor:divisorALU|lpm_divide:Div0|lpm_divide_1am:auto_generated                                                       ; lpm_divide_1am      ; work         ;
-;             |sign_div_unsign_7kh:divider| ; 22 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Divisor:divisorALU|lpm_divide:Div0|lpm_divide_1am:auto_generated|sign_div_unsign_7kh:divider                           ; sign_div_unsign_7kh ; work         ;
-;                |alt_u_div_kse:divider|    ; 22 (22)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Divisor:divisorALU|lpm_divide:Div0|lpm_divide_1am:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider     ; alt_u_div_kse       ; work         ;
-;    |Modulador:moduladorALU|               ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Modulador:moduladorALU                                                                                                 ; Modulador           ; work         ;
-;       |lpm_divide:Mod0|                   ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Modulador:moduladorALU|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
-;          |lpm_divide_42m:auto_generated|  ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Modulador:moduladorALU|lpm_divide:Mod0|lpm_divide_42m:auto_generated                                                   ; lpm_divide_42m      ; work         ;
-;             |sign_div_unsign_7kh:divider| ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Modulador:moduladorALU|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh ; work         ;
-;                |alt_u_div_kse:divider|    ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Modulador:moduladorALU|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider ; alt_u_div_kse       ; work         ;
-;    |Multiplexor:multiplexorALU|           ; 20 (20)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Multiplexor:multiplexorALU                                                                                             ; Multiplexor         ; work         ;
-;    |Multiplicador:multiplicadorALU|       ; 0 (0)               ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |ALU|Multiplicador:multiplicadorALU                                                                                         ; Multiplicador       ; work         ;
-;    |Restador:restadorALU|                 ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Restador:restadorALU                                                                                                   ; Restador            ; work         ;
-;    |ShiftLeft:shiftLeftALU|               ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|ShiftLeft:shiftLeftALU                                                                                                 ; ShiftLeft           ; work         ;
-;    |ShiftRight:shiftRightALU|             ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|ShiftRight:shiftRightALU                                                                                               ; ShiftRight          ; work         ;
-+-------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                      ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                         ; Entity Name         ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |ALU                                         ; 81 (0)              ; 0 (0)                     ; 0                 ; 1          ; 20   ; 0            ; |ALU                                                                                                                        ; ALU                 ; work         ;
+;    |ControladorBanderas:controladorBanderas| ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|ControladorBanderas:controladorBanderas                                                                                ; ControladorBanderas ; work         ;
+;    |Divisor:divisorALU|                      ; 23 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Divisor:divisorALU                                                                                                     ; Divisor             ; work         ;
+;       |lpm_divide:Div0|                      ; 23 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Divisor:divisorALU|lpm_divide:Div0                                                                                     ; lpm_divide          ; work         ;
+;          |lpm_divide_1am:auto_generated|     ; 23 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Divisor:divisorALU|lpm_divide:Div0|lpm_divide_1am:auto_generated                                                       ; lpm_divide_1am      ; work         ;
+;             |sign_div_unsign_7kh:divider|    ; 23 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Divisor:divisorALU|lpm_divide:Div0|lpm_divide_1am:auto_generated|sign_div_unsign_7kh:divider                           ; sign_div_unsign_7kh ; work         ;
+;                |alt_u_div_kse:divider|       ; 23 (23)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Divisor:divisorALU|lpm_divide:Div0|lpm_divide_1am:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider     ; alt_u_div_kse       ; work         ;
+;    |Modulador:moduladorALU|                  ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Modulador:moduladorALU                                                                                                 ; Modulador           ; work         ;
+;       |lpm_divide:Mod0|                      ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Modulador:moduladorALU|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;          |lpm_divide_42m:auto_generated|     ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Modulador:moduladorALU|lpm_divide:Mod0|lpm_divide_42m:auto_generated                                                   ; lpm_divide_42m      ; work         ;
+;             |sign_div_unsign_7kh:divider|    ; 25 (0)              ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Modulador:moduladorALU|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider                       ; sign_div_unsign_7kh ; work         ;
+;                |alt_u_div_kse:divider|       ; 25 (25)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Modulador:moduladorALU|lpm_divide:Mod0|lpm_divide_42m:auto_generated|sign_div_unsign_7kh:divider|alt_u_div_kse:divider ; alt_u_div_kse       ; work         ;
+;    |Multiplexor:multiplexorALU|              ; 20 (20)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Multiplexor:multiplexorALU                                                                                             ; Multiplexor         ; work         ;
+;    |Multiplicador:multiplicadorALU|          ; 0 (0)               ; 0 (0)                     ; 0                 ; 1          ; 0    ; 0            ; |ALU|Multiplicador:multiplicadorALU                                                                                         ; Multiplicador       ; work         ;
+;    |Restador:restadorALU|                    ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Restador:restadorALU                                                                                                   ; Restador            ; work         ;
+;    |ShiftLeft:shiftLeftALU|                  ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|ShiftLeft:shiftLeftALU                                                                                                 ; ShiftLeft           ; work         ;
+;    |ShiftRight:shiftRightALU|                ; 1 (1)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|ShiftRight:shiftRightALU                                                                                               ; ShiftRight          ; work         ;
+;    |Sumador:sumadorALU|                      ; 5 (5)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |ALU|Sumador:sumadorALU                                                                                                     ; Sumador             ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+-----------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
 Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
 
 
@@ -467,52 +468,33 @@ Note: In order to hide this table in the UI and the text report file, please set
 Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
 
 
-+-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port Connectivity Checks: "ControladorBanderas:controladorBanderas"                                                                                                                                 ;
-+-------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Port  ; Type   ; Severity ; Details                                                                                                                                                                 ;
-+-------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; N     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (32 bits) it drives.  The 31 most-significant bit(s) in the port expression will be connected to GND. ;
-; N[-1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                     ;
-; Z     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (32 bits) it drives.  The 31 most-significant bit(s) in the port expression will be connected to GND. ;
-; Z[-1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                     ;
-; C     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (32 bits) it drives.  The 31 most-significant bit(s) in the port expression will be connected to GND. ;
-; C[-1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                     ;
-; V     ; Output ; Warning  ; Output or bidir port (1 bits) is smaller than the port expression (32 bits) it drives.  The 31 most-significant bit(s) in the port expression will be connected to GND. ;
-; V[-1] ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed.                                                                                     ;
-+-------+--------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-
-
 +-----------------------------------------------------+
 ; Post-Synthesis Netlist Statistics for Top Partition ;
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_lcell_comb     ; 75                          ;
+; arriav_lcell_comb     ; 81                          ;
 ;     arith             ; 17                          ;
-;         0 data inputs ; 4                           ;
-;         1 data inputs ; 1                           ;
-;         2 data inputs ; 2                           ;
-;         3 data inputs ; 4                           ;
-;         5 data inputs ; 6                           ;
-;     extend            ; 2                           ;
-;         7 data inputs ; 2                           ;
-;     normal            ; 38                          ;
-;         0 data inputs ; 1                           ;
-;         2 data inputs ; 5                           ;
-;         3 data inputs ; 6                           ;
-;         4 data inputs ; 5                           ;
-;         5 data inputs ; 15                          ;
-;         6 data inputs ; 6                           ;
-;     shared            ; 18                          ;
-;         0 data inputs ; 6                           ;
+;         0 data inputs ; 5                           ;
 ;         2 data inputs ; 6                           ;
+;         5 data inputs ; 6                           ;
+;     extend            ; 3                           ;
+;         7 data inputs ; 3                           ;
+;     normal            ; 38                          ;
+;         2 data inputs ; 5                           ;
+;         3 data inputs ; 5                           ;
+;         4 data inputs ; 8                           ;
+;         5 data inputs ; 13                          ;
+;         6 data inputs ; 7                           ;
+;     shared            ; 23                          ;
+;         0 data inputs ; 7                           ;
+;         2 data inputs ; 10                          ;
 ;         4 data inputs ; 6                           ;
 ; arriav_mac            ; 1                           ;
 ; boundary_port         ; 20                          ;
 ;                       ;                             ;
-; Max LUT depth         ; 10.50                       ;
-; Average LUT depth     ; 7.41                        ;
+; Max LUT depth         ; 11.50                       ;
+; Average LUT depth     ; 7.90                        ;
 +-----------------------+-----------------------------+
 
 
@@ -531,7 +513,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 20.1.0 Build 711 06/05/2020 SJ Lite Edition
-    Info: Processing started: Mon Mar 21 22:19:19 2022
+    Info: Processing started: Tue Mar 22 19:49:32 2022
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off ALU -c ALU
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 8 of the 8 processors detected
@@ -540,6 +522,7 @@ Info (12021): Found 1 design units, including 1 entities, in source file compuer
 Info (12021): Found 1 design units, including 1 entities, in source file sumador.sv
     Info (12023): Found entity 1: Sumador File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/Sumador.sv Line: 1
 Warning (10275): Verilog HDL Module Instantiation warning at ALU.sv(28): ignored dangling comma in List of Port Connections File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 28
+Warning (10275): Verilog HDL Module Instantiation warning at ALU.sv(48): ignored dangling comma in List of Port Connections File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 48
 Info (12021): Found 1 design units, including 1 entities, in source file alu.sv
     Info (12023): Found entity 1: ALU File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 1
 Info (12021): Found 1 design units, including 1 entities, in source file restador.sv
@@ -563,27 +546,26 @@ Info (12021): Found 1 design units, including 1 entities, in source file modulad
 Info (12021): Found 1 design units, including 1 entities, in source file controladorbanderas.sv
     Info (12023): Found entity 1: ControladorBanderas File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ControladorBanderas.sv Line: 1
 Info (12127): Elaborating entity "ALU" for the top level hierarchy
-Warning (10034): Output port "banderas" at ALU.sv(6) has no driver File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 6
 Info (12128): Elaborating entity "Sumador" for hierarchy "Sumador:sumadorALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 28
 Info (12128): Elaborating entity "Restador" for hierarchy "Restador:restadorALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 35
 Info (12128): Elaborating entity "Multiplicador" for hierarchy "Multiplicador:multiplicadorALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 42
-Info (12128): Elaborating entity "Divisor" for hierarchy "Divisor:divisorALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 49
-Info (12128): Elaborating entity "Modulador" for hierarchy "Modulador:moduladorALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 55
-Info (12128): Elaborating entity "CompuertaAND" for hierarchy "CompuertaAND:andALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 61
-Info (12128): Elaborating entity "CompuertaOR" for hierarchy "CompuertaOR:orALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 67
-Info (12128): Elaborating entity "CompuertaXOR" for hierarchy "CompuertaXOR:xorALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 73
-Info (12128): Elaborating entity "ShiftLeft" for hierarchy "ShiftLeft:shiftLeftALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 79
-Info (12128): Elaborating entity "ShiftRight" for hierarchy "ShiftRight:shiftRightALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 85
-Info (12128): Elaborating entity "Multiplexor" for hierarchy "Multiplexor:multiplexorALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 100
-Info (12128): Elaborating entity "ControladorBanderas" for hierarchy "ControladorBanderas:controladorBanderas" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 110
-Warning (10235): Verilog HDL Always Construct warning at ControladorBanderas.sv(15): variable "carryOut" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ControladorBanderas.sv Line: 15
-Warning (10034): Output port "N" at ControladorBanderas.sv(4) has no driver File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ControladorBanderas.sv Line: 4
-Warning (10034): Output port "V" at ControladorBanderas.sv(7) has no driver File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ControladorBanderas.sv Line: 7
+Info (12128): Elaborating entity "Divisor" for hierarchy "Divisor:divisorALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 48
+Info (12128): Elaborating entity "Modulador" for hierarchy "Modulador:moduladorALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 54
+Info (12128): Elaborating entity "CompuertaAND" for hierarchy "CompuertaAND:andALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 60
+Info (12128): Elaborating entity "CompuertaOR" for hierarchy "CompuertaOR:orALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 66
+Info (12128): Elaborating entity "CompuertaXOR" for hierarchy "CompuertaXOR:xorALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 72
+Info (12128): Elaborating entity "ShiftLeft" for hierarchy "ShiftLeft:shiftLeftALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 78
+Info (12128): Elaborating entity "ShiftRight" for hierarchy "ShiftRight:shiftRightALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 84
+Info (12128): Elaborating entity "Multiplexor" for hierarchy "Multiplexor:multiplexorALU" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 99
+Info (12128): Elaborating entity "ControladorBanderas" for hierarchy "ControladorBanderas:controladorBanderas" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 107
+Warning (10235): Verilog HDL Always Construct warning at ControladorBanderas.sv(12): variable "borrowOut" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ControladorBanderas.sv Line: 12
+Warning (10235): Verilog HDL Always Construct warning at ControladorBanderas.sv(20): variable "carryOut" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ControladorBanderas.sv Line: 20
+Warning (10235): Verilog HDL Always Construct warning at ControladorBanderas.sv(24): variable "overflow" is read inside the Always Construct but isn't in the Always Construct's Event Control File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ControladorBanderas.sv Line: 24
 Info (278001): Inferred 2 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Divisor:divisorALU|Div0" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/Divisor.sv Line: 6
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Divisor:divisorALU|Div0" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/Divisor.sv Line: 5
     Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "Modulador:moduladorALU|Mod0" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/Modulador.sv Line: 5
-Info (12130): Elaborated megafunction instantiation "Divisor:divisorALU|lpm_divide:Div0" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/Divisor.sv Line: 6
-Info (12133): Instantiated megafunction "Divisor:divisorALU|lpm_divide:Div0" with the following parameter: File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/Divisor.sv Line: 6
+Info (12130): Elaborated megafunction instantiation "Divisor:divisorALU|lpm_divide:Div0" File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/Divisor.sv Line: 5
+Info (12133): Instantiated megafunction "Divisor:divisorALU|lpm_divide:Div0" with the following parameter: File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/Divisor.sv Line: 5
     Info (12134): Parameter "LPM_WIDTHN" = "4"
     Info (12134): Parameter "LPM_WIDTHD" = "4"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -602,24 +584,18 @@ Info (12133): Instantiated megafunction "Modulador:moduladorALU|lpm_divide:Mod0"
     Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
 Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_42m.tdf
     Info (12023): Found entity 1: lpm_divide_42m File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/db/lpm_divide_42m.tdf Line: 25
-Warning (12241): 1 hierarchies have connectivity warnings - see the Connectivity Checks report folder
-Warning (13024): Output pins are stuck at VCC or GND
-    Warning (13410): Pin "banderas[0]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 6
-    Warning (13410): Pin "banderas[1]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 6
-    Warning (13410): Pin "banderas[2]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 6
-    Warning (13410): Pin "banderas[3]" is stuck at GND File: C:/Users/osaro/OneDrive/Escritorio/Noveno Semestre (IS2022)/Taller de Diseño Digital/Laboratorios/CE3201-Laboratorio-3/ALU.sv Line: 6
 Info (286030): Timing-Driven Synthesis is running
 Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
     Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
-Info (21057): Implemented 95 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 102 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 12 input pins
     Info (21059): Implemented 8 output pins
-    Info (21061): Implemented 74 logic cells
+    Info (21061): Implemented 81 logic cells
     Info (21062): Implemented 1 DSP elements
-Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 12 warnings
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 6 warnings
     Info: Peak virtual memory: 4843 megabytes
-    Info: Processing ended: Mon Mar 21 22:19:33 2022
-    Info: Elapsed time: 00:00:14
-    Info: Total CPU time (on all processors): 00:00:32
+    Info: Processing ended: Tue Mar 22 19:49:48 2022
+    Info: Elapsed time: 00:00:16
+    Info: Total CPU time (on all processors): 00:00:35
 
 
