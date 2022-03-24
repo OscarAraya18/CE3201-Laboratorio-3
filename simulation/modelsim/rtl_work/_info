@@ -11,24 +11,24 @@ cModel Technology
 Z0 dC:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/simulation/modelsim
 vALU
 Z1 DXx6 sv_std 3 std 0 22 VYECXdT12H8WgbUP_5Y6:3
-Z2 !s110 1648017462
+Z2 !s110 1648080988
 !i10b 1
-!s100 :dOLalCeaV`ZlBT5dhA]O0
+!s100 l<`kg@A?goY1@DlS8NE5Z0
 Z3 !s11b Dg1SIo80bB@j0V0VzS_@n1
-I@RA^A<SX=alP1_]^F_cJ30
+IXg12OmlSZR9WUBLi3R97`1
 Z4 VDg1SIo80bB@j0V0VzS_@n1
 S1
 R0
-w1648015440
+w1648064269
 8C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ALU.sv
 FC:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ALU.sv
 !i122 2
-L0 1 117
+L0 1 119
 Z5 OV;L;2020.1;71
 r1
 !s85 0
 31
-Z6 !s108 1648017462.000000
+Z6 !s108 1648080988.000000
 !s107 C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ALU.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3|C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ALU.sv|
 !i113 1
@@ -38,15 +38,15 @@ Z9 tCvgOpt 0
 n@a@l@u
 vALU_tb
 R1
-Z10 !s110 1648017463
+Z10 !s110 1648080989
 !i10b 1
-!s100 RFDfG:6U]cMV[3HFT`fl82
+!s100 ez7Zg_7hhMG<X33?_V=Gg1
 R3
-I1Q7>Pf262_CORYDlQL0MB2
+Ij0Lb`>?mb_RE72TLE>?<50
 R4
 S1
 R0
-w1648017427
+w1648063689
 8C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ALU_tb.sv
 FC:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ALU_tb.sv
 !i122 13
@@ -55,7 +55,7 @@ R5
 r1
 !s85 0
 31
-Z11 !s108 1648017463.000000
+Z11 !s108 1648080989.000000
 !s107 C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ALU_tb.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3|C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ALU_tb.sv|
 !i113 1
@@ -119,7 +119,7 @@ R9
 n@compuerta@o@r
 vCompuertaXOR
 R1
-R10
+R2
 !i10b 1
 !s100 60Z_UCn_S6U6XOQk>O]1`2
 R3
@@ -136,7 +136,7 @@ R5
 r1
 !s85 0
 31
-R11
+R6
 !s107 C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/CompuertaXOR.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3|C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/CompuertaXOR.sv|
 !i113 1
@@ -148,17 +148,17 @@ vControladorBanderas
 R1
 R10
 !i10b 1
-!s100 _71_<0FhbN2ikGBlajo=92
+!s100 e:hF2fdOVQKF1m<kjilHj0
 R3
-I[0Nn?6BYHh;?zjMI><eTo1
+IBn[9zEzJTU@^aYeYNZMbZ0
 R4
 S1
 R0
-w1648015550
+w1648063234
 8C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ControladorBanderas.sv
 FC:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/ControladorBanderas.sv
 !i122 12
-L0 1 36
+L0 1 127
 R5
 r1
 !s85 0
@@ -227,7 +227,7 @@ R9
 n@modulador
 vMultiplexor
 R1
-R10
+R2
 !i10b 1
 !s100 81zYLVGY;b[adbh1RQgmH3
 R3
@@ -244,7 +244,7 @@ R5
 r1
 !s85 0
 31
-R11
+R6
 !s107 C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Multiplexor.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3|C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Multiplexor.sv|
 !i113 1
@@ -254,24 +254,24 @@ R9
 n@multiplexor
 vMultiplicador
 R1
-R10
+R2
 !i10b 1
-!s100 =?gajn9P8Bmd;F3h26`?K2
+!s100 4[j>azZeMJL[?:DgkXMT^2
 R3
-IA[@e^KkmNO2lj=UGb3S7H3
+I9HJXlUk;PK<mjnLnIzR401
 R4
 S1
 R0
-R12
+w1648066995
 8C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Multiplicador.sv
 FC:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Multiplicador.sv
 !i122 9
-Z14 L0 1 7
+L0 1 16
 R5
 r1
 !s85 0
 31
-R11
+R6
 !s107 C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Multiplicador.sv|
 !s90 -reportprogress|300|-sv|-work|work|+incdir+C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3|C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Multiplicador.sv|
 !i113 1
@@ -293,7 +293,7 @@ R12
 8C:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Restador.sv
 FC:/Users/J_Sol/Desktop/Lab3/CE3201-Laboratorio-3/Restador.sv
 !i122 3
-R14
+Z14 L0 1 7
 R5
 r1
 !s85 0

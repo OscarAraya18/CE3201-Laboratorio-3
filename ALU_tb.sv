@@ -41,7 +41,7 @@ module ALU_tb();
 		Nesperada=0;
 		Zesperada=0;
 		Cesperada=0;
-		V=0;	
+		Vesperada=0;	
 		#10
 		assert (resultado == resultadoEsperado && N == Nesperada && Z == Zesperada && C == Cesperada && V == Vesperada) 
 			$display ($sformatf("Prueba exitosa para A = %b, B = %b", A, B));
@@ -181,7 +181,7 @@ module ALU_tb();
 		B = 4'b0010;
 		resultadoEsperado=4'b0000;
 		Nesperada=0;
-		Zesperada=0;
+		Zesperada=1;
 		Cesperada=0;
 		Vesperada=1;
 		#10
@@ -253,7 +253,7 @@ module ALU_tb();
 		Nesperada=0;
 		Zesperada=1;
 		Cesperada=0;
-		V=0;	
+		Vesperada=0;	
 		#10
 		assert (resultado == resultadoEsperado && N == Nesperada && Z == Zesperada && C == Cesperada && V == Vesperada)
 			$display ($sformatf("Prueba exitosa para A = %b, B = %b", A, B));
@@ -285,8 +285,8 @@ module ALU_tb();
 		
 		A = 4'b1101;
 		B = 4'b1010;
-		resultadoEsperado=4'b1101;
-		Nesperada=1;
+		resultadoEsperado=4'b0011;
+		Nesperada=0;
 		Zesperada=0;
 		Cesperada=0;
 		Vesperada=0;

@@ -39,7 +39,7 @@
 
 set_global_assignment -name FAMILY "Cyclone V"
 set_global_assignment -name DEVICE 5CSEMA5F31C6
-set_global_assignment -name TOP_LEVEL_ENTITY ALU
+set_global_assignment -name TOP_LEVEL_ENTITY FPGA
 set_global_assignment -name ORIGINAL_QUARTUS_VERSION 20.1.0
 set_global_assignment -name PROJECT_CREATION_TIME_DATE "13:15:44  MARCH 12, 2022"
 set_global_assignment -name LAST_QUARTUS_VERSION "20.1.1 Lite Edition"
@@ -52,9 +52,6 @@ set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_symbol
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_signal_integrity
 set_global_assignment -name EDA_GENERATE_FUNCTIONAL_NETLIST OFF -section_id eda_board_design_boundary_scan
-set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
-set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
-set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_global_assignment -name SYSTEMVERILOG_FILE CompuertaAND.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Sumador.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ALU.sv
@@ -71,7 +68,6 @@ set_global_assignment -name SYSTEMVERILOG_FILE CompuertaXOR.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Multiplicador.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Divisor.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Modulador.sv
-set_global_assignment -name SYSTEMVERILOG_FILE ControladorBanderas.sv
 set_global_assignment -name SYSTEMVERILOG_FILE Display7seg.sv
 set_global_assignment -name SYSTEMVERILOG_FILE ALU_tb.sv
 set_global_assignment -name EDA_TEST_BENCH_ENABLE_STATUS TEST_BENCH_MODE -section_id eda_simulation
@@ -80,5 +76,32 @@ set_global_assignment -name EDA_TEST_BENCH_NAME testeo -section_id eda_simulatio
 set_global_assignment -name EDA_DESIGN_INSTANCE_NAME NA -section_id testeo
 set_global_assignment -name EDA_TEST_BENCH_MODULE_NAME testeo -section_id testeo
 set_global_assignment -name EDA_TEST_BENCH_FILE ALU_tb.sv -section_id testeo
+set_global_assignment -name SYSTEMVERILOG_FILE ControladorBanderas.sv
+set_location_assignment PIN_AF10 -to A[3]
+set_location_assignment PIN_AF9 -to A[2]
+set_location_assignment PIN_AC12 -to A[1]
+set_location_assignment PIN_AB12 -to A[0]
+set_location_assignment PIN_Y16 -to B[3]
+set_location_assignment PIN_W15 -to B[2]
+set_location_assignment PIN_AA15 -to B[1]
+set_location_assignment PIN_AA14 -to B[0]
+set_location_assignment PIN_AE26 -to hex1[6]
+set_location_assignment PIN_AE27 -to hex1[5]
+set_location_assignment PIN_AE28 -to hex1[4]
+set_location_assignment PIN_AG27 -to hex1[3]
+set_location_assignment PIN_AF28 -to hex1[2]
+set_location_assignment PIN_AG28 -to hex1[1]
+set_location_assignment PIN_AH28 -to hex1[0]
+set_location_assignment PIN_Y21 -to C
+set_location_assignment PIN_W21 -to N
+set_location_assignment PIN_W20 -to V
+set_location_assignment PIN_Y19 -to Z
+set_global_assignment -name SYSTEMVERILOG_FILE FPGA.sv
+set_location_assignment PIN_AE11 -to seleccion[0]
+set_location_assignment PIN_AC9 -to seleccion[1]
+set_location_assignment PIN_AD10 -to seleccion[2]
+set_location_assignment PIN_AE12 -to seleccion[3]
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
 set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top
-set_global_assignment -name SYSTEMVERILOG_FILE Alu_FPGA.sv

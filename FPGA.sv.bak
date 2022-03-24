@@ -1,0 +1,4 @@
+module FPGA(A, B, seleccion, resultado, N, Z, C, V);
+
+
+endmodule 

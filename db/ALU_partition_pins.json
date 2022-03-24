@@ -4,43 +4,55 @@
 			"name" : "Top",
 			"pins" : [
 				{
-					"name" : "resultado[0]",
+					"name" : "hex1[0]",
 					"strict" : false
 				},
 				{
-					"name" : "resultado[1]",
+					"name" : "hex1[1]",
 					"strict" : false
 				},
 				{
-					"name" : "resultado[2]",
+					"name" : "hex1[2]",
 					"strict" : false
 				},
 				{
-					"name" : "resultado[3]",
+					"name" : "hex1[3]",
 					"strict" : false
 				},
 				{
-					"name" : "banderas[0]",
+					"name" : "hex1[4]",
 					"strict" : false
 				},
 				{
-					"name" : "banderas[1]",
+					"name" : "hex1[5]",
 					"strict" : false
 				},
 				{
-					"name" : "banderas[2]",
+					"name" : "hex1[6]",
 					"strict" : false
 				},
 				{
-					"name" : "banderas[3]",
+					"name" : "N",
 					"strict" : false
 				},
 				{
-					"name" : "operandoB[0]",
+					"name" : "Z",
 					"strict" : false
 				},
 				{
-					"name" : "operandoA[0]",
+					"name" : "C",
+					"strict" : false
+				},
+				{
+					"name" : "V",
+					"strict" : false
+				},
+				{
+					"name" : "B[0]",
+					"strict" : false
+				},
+				{
+					"name" : "A[0]",
 					"strict" : false
 				},
 				{
@@ -60,27 +72,27 @@
 					"strict" : false
 				},
 				{
-					"name" : "operandoA[2]",
+					"name" : "A[2]",
 					"strict" : false
 				},
 				{
-					"name" : "operandoA[1]",
+					"name" : "A[1]",
 					"strict" : false
 				},
 				{
-					"name" : "operandoA[3]",
+					"name" : "A[3]",
 					"strict" : false
 				},
 				{
-					"name" : "operandoB[1]",
+					"name" : "B[1]",
 					"strict" : false
 				},
 				{
-					"name" : "operandoB[3]",
+					"name" : "B[3]",
 					"strict" : false
 				},
 				{
-					"name" : "operandoB[2]",
+					"name" : "B[2]",
 					"strict" : false
 				}
 			]

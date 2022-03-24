@@ -1,4 +1,30 @@
-|ALU
+|FPGA
+A[0] => A[0].IN1
+A[1] => A[1].IN1
+A[2] => A[2].IN1
+A[3] => A[3].IN1
+B[0] => B[0].IN1
+B[1] => B[1].IN1
+B[2] => B[2].IN1
+B[3] => B[3].IN1
+seleccion[0] => seleccion[0].IN1
+seleccion[1] => seleccion[1].IN1
+seleccion[2] => seleccion[2].IN1
+seleccion[3] => seleccion[3].IN1
+hex1[0] << Display7Seg:Display.port1
+hex1[1] << Display7Seg:Display.port1
+hex1[2] << Display7Seg:Display.port1
+hex1[3] << Display7Seg:Display.port1
+hex1[4] << Display7Seg:Display.port1
+hex1[5] << Display7Seg:Display.port1
+hex1[6] << Display7Seg:Display.port1
+N << salida[4].DB_MAX_OUTPUT_PORT_TYPE
+Z << ALU:problemaALU.Z
+C << ALU:problemaALU.C
+V << ALU:problemaALU.V
+
+
+|FPGA|ALU:problemaALU
 operandoA[0] => operandoA[0].IN10
 operandoA[1] => operandoA[1].IN10
 operandoA[2] => operandoA[2].IN10
@@ -7,21 +33,21 @@ operandoB[0] => operandoB[0].IN10
 operandoB[1] => operandoB[1].IN10
 operandoB[2] => operandoB[2].IN10
 operandoB[3] => operandoB[3].IN10
-seleccion[0] => seleccion[0].IN1
-seleccion[1] => seleccion[1].IN1
-seleccion[2] => seleccion[2].IN1
-seleccion[3] => seleccion[3].IN1
-resultado[0] << resultado[0].DB_MAX_OUTPUT_PORT_TYPE
-resultado[1] << resultado[1].DB_MAX_OUTPUT_PORT_TYPE
-resultado[2] << resultado[2].DB_MAX_OUTPUT_PORT_TYPE
-resultado[3] << resultado[3].DB_MAX_OUTPUT_PORT_TYPE
-N << ControladorBanderas:controladorBanderas.N
-Z << ControladorBanderas:controladorBanderas.Z
-C << ControladorBanderas:controladorBanderas.C
-V << ControladorBanderas:controladorBanderas.V
+seleccion[0] => seleccion[0].IN2
+seleccion[1] => seleccion[1].IN2
+seleccion[2] => seleccion[2].IN2
+seleccion[3] => seleccion[3].IN2
+resultado[0] <= resultado[0].DB_MAX_OUTPUT_PORT_TYPE
+resultado[1] <= resultado[1].DB_MAX_OUTPUT_PORT_TYPE
+resultado[2] <= resultado[2].DB_MAX_OUTPUT_PORT_TYPE
+resultado[3] <= resultado[3].DB_MAX_OUTPUT_PORT_TYPE
+N <= ControladorBanderas:controladorBanderasALU.N
+Z <= ControladorBanderas:controladorBanderasALU.Z
+C <= ControladorBanderas:controladorBanderasALU.C
+V <= ControladorBanderas:controladorBanderasALU.V
 
 
-|ALU|Sumador:sumadorALU
+|FPGA|ALU:problemaALU|Sumador:sumadorALU
 operandoA[0] => Add0.IN4
 operandoA[1] => Add0.IN3
 operandoA[2] => Add0.IN2
@@ -37,7 +63,7 @@ resultado[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
 carryOut <= Add0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|Restador:restadorALU
+|FPGA|ALU:problemaALU|Restador:restadorALU
 operandoA[0] => Add0.IN8
 operandoA[1] => Add0.IN7
 operandoA[2] => Add0.IN6
@@ -53,7 +79,7 @@ resultado[3] <= Add0.DB_MAX_OUTPUT_PORT_TYPE
 borrowOut <= Add0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|Multiplicador:multiplicadorALU
+|FPGA|ALU:problemaALU|Multiplicador:multiplicadorALU
 operandoA[0] => Mult0.IN3
 operandoA[1] => Mult0.IN2
 operandoA[2] => Mult0.IN1
@@ -66,10 +92,10 @@ resultado[0] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
 resultado[1] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
 resultado[2] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
 resultado[3] <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
-carryOut <= Mult0.DB_MAX_OUTPUT_PORT_TYPE
+overflow <= LessThan0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|Divisor:divisorALU
+|FPGA|ALU:problemaALU|Divisor:divisorALU
 operandoA[0] => Div0.IN3
 operandoA[1] => Div0.IN2
 operandoA[2] => Div0.IN1
@@ -84,7 +110,7 @@ resultado[2] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
 resultado[3] <= Div0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|Modulador:moduladorALU
+|FPGA|ALU:problemaALU|Modulador:moduladorALU
 operandoA[0] => Mod0.IN3
 operandoA[1] => Mod0.IN2
 operandoA[2] => Mod0.IN1
@@ -99,7 +125,7 @@ resultado[2] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
 resultado[3] <= Mod0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|CompuertaAND:andALU
+|FPGA|ALU:problemaALU|CompuertaAND:andALU
 operandoA[0] => resultado.IN0
 operandoA[1] => resultado.IN0
 operandoA[2] => resultado.IN0
@@ -114,7 +140,7 @@ resultado[2] <= resultado.DB_MAX_OUTPUT_PORT_TYPE
 resultado[3] <= resultado.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|CompuertaOR:orALU
+|FPGA|ALU:problemaALU|CompuertaOR:orALU
 operandoA[0] => resultado.IN0
 operandoA[1] => resultado.IN0
 operandoA[2] => resultado.IN0
@@ -129,7 +155,7 @@ resultado[2] <= resultado.DB_MAX_OUTPUT_PORT_TYPE
 resultado[3] <= resultado.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|CompuertaXOR:xorALU
+|FPGA|ALU:problemaALU|CompuertaXOR:xorALU
 operandoA[0] => resultado.IN0
 operandoA[1] => resultado.IN0
 operandoA[2] => resultado.IN0
@@ -144,7 +170,7 @@ resultado[2] <= resultado.DB_MAX_OUTPUT_PORT_TYPE
 resultado[3] <= resultado.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|ShiftLeft:shiftLeftALU
+|FPGA|ALU:problemaALU|ShiftLeft:shiftLeftALU
 operandoA[0] => ShiftLeft0.IN4
 operandoA[1] => ShiftLeft0.IN3
 operandoA[2] => ShiftLeft0.IN2
@@ -159,7 +185,7 @@ resultado[2] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
 resultado[3] <= ShiftLeft0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|ShiftRight:shiftRightALU
+|FPGA|ALU:problemaALU|ShiftRight:shiftRightALU
 operandoA[0] => ShiftRight0.IN4
 operandoA[1] => ShiftRight0.IN3
 operandoA[2] => ShiftRight0.IN2
@@ -174,7 +200,7 @@ resultado[2] <= ShiftRight0.DB_MAX_OUTPUT_PORT_TYPE
 resultado[3] <= ShiftRight0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|Multiplexor:multiplexorALU
+|FPGA|ALU:problemaALU|Multiplexor:multiplexorALU
 entradaSuma[0] => Mux3.IN6
 entradaSuma[1] => Mux2.IN6
 entradaSuma[2] => Mux1.IN6
@@ -237,17 +263,36 @@ salida[2] <= Mux1.DB_MAX_OUTPUT_PORT_TYPE
 salida[3] <= Mux0.DB_MAX_OUTPUT_PORT_TYPE
 
 
-|ALU|ControladorBanderas:controladorBanderas
+|FPGA|ALU:problemaALU|ControladorBanderas:controladorBanderasALU
+carryOut => C.DATAB
+borrowOut => N.DATAB
+overflow => V.DATAB
 resultado[0] => Equal0.IN31
 resultado[1] => Equal0.IN30
 resultado[2] => Equal0.IN29
 resultado[3] => Equal0.IN28
-carryOut => C.DATAIN
-borrowOut => N.DATAIN
-overflow => V.DATAIN
-N <= borrowOut.DB_MAX_OUTPUT_PORT_TYPE
+seleccion[0] => Decoder0.IN3
+seleccion[1] => Decoder0.IN2
+seleccion[2] => Decoder0.IN1
+seleccion[3] => Decoder0.IN0
+N <= N.DB_MAX_OUTPUT_PORT_TYPE
 Z <= Equal0.DB_MAX_OUTPUT_PORT_TYPE
-C <= carryOut.DB_MAX_OUTPUT_PORT_TYPE
-V <= overflow.DB_MAX_OUTPUT_PORT_TYPE
+C <= C.DB_MAX_OUTPUT_PORT_TYPE
+V <= V.DB_MAX_OUTPUT_PORT_TYPE
+
+
+|FPGA|Display7Seg:Display
+inBits[0] => Decoder0.IN4
+inBits[1] => Decoder0.IN3
+inBits[2] => Decoder0.IN2
+inBits[3] => Decoder0.IN1
+inBits[4] => Decoder0.IN0
+outBits[0] <= WideOr6.DB_MAX_OUTPUT_PORT_TYPE
+outBits[1] <= WideOr5.DB_MAX_OUTPUT_PORT_TYPE
+outBits[2] <= WideOr4.DB_MAX_OUTPUT_PORT_TYPE
+outBits[3] <= WideOr3.DB_MAX_OUTPUT_PORT_TYPE
+outBits[4] <= WideOr2.DB_MAX_OUTPUT_PORT_TYPE
+outBits[5] <= WideOr1.DB_MAX_OUTPUT_PORT_TYPE
+outBits[6] <= WideOr0.DB_MAX_OUTPUT_PORT_TYPE
 
 
